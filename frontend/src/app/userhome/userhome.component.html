@@ -1,0 +1,60 @@
+<div class="container-fluid" id="body">
+  <div class="row">
+    <div class="col-md-12 user-head">
+      <a routerLink="/userhome" (click)="logout()"
+        ><i class="fa-solid fa-house fa-xl home-icon text-light"></i>Logout</a
+      >
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 userhome_heading">
+      <h1 class="audio_heading">
+        <i class="fa-solid fa-music homeicon fa-xl"></i>
+        Audio Tracker
+      </h1>
+      <form class="d-flex search-icon search" role="search" (ngSubmit)="search()" [formGroup]="searchForm" novalidate>
+        <input
+          class="form-control me-2 bg-dark text-light"
+          type="search"
+          formControlName="search_value"
+          placeholder="Search By Title or Album"
+          aria-label="Search"
+        />
+        <button class="btn btn-dark cursive" type="submit">
+          <a>Search&nbsp;<i class="fa-solid fa-magnifying-glass"></i></a></button
+        >&nbsp;
+        <button class="btn btn-dark cursive" type="button" (click)="backToHome()">
+          <a>Home<i class="fa-solid fa-house text-light"></i></a>
+        </button>
+      </form>
+      <div class="col-md-2"><p></p></div>
+      <div class="col-md-8">
+        <div class="cards-area border-light">
+          <div class="row card-width">
+            <div class="card border-secondary col-3 m-2 fill" *ngFor="let audio of audios" style="width: 18rem">
+              <img
+                class="card-img-top"
+                alt="..."
+                src="https://images.pexels.com/photos/164879/pexels-photo-164879.jpeg?auto=compress&cs=tinysrgb&w=600"
+              />
+              <div class="card-body">
+                <p class="card-title cursive btn_align track_name_align text-light">
+                  <b>{{ audio.title }} </b>
+                </p>
+                <p class="card-text cursive text-light">
+                  <b>Album : {{ audio.album }} </b>
+                </p>
+                <button class="btn btn-dark cursive" (click)="view(audio.trackid)">View Details</button>
+                <div class="rating">
+                  <ng-container> <br /><i class="fa-solid fa-star"></i> </ng-container>
+                </div>
+              </div>
+            </div>
+            &nbsp;
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2"><p></p></div>
+    </div>
+  </div>
+</div>

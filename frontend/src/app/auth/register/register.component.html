@@ -1,0 +1,87 @@
+<div class ="main_bg background">  
+	<div class="row col-md-12">
+	  <div class=" col-md-4 text-light width">   
+	  </div>
+	  <div class=" col-md-4 width ">
+		
+			<div class="wrapper">
+			
+			  <div class="logo">
+				<img
+				  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRy8kEmJ3L8YfCS7b90biGobhe2AOVsrsRw5w&usqp=CAU"
+				  alt=""
+				/>
+			  </div>
+			  <div class="text-center mt-4 name">AUDIO TRACKER</div>
+			  <form class="p-3 mt-3" (ngSubmit)="register()" [formGroup]="registerForm" novalidate>
+				<div class="form-field d-flex align-items-center">
+				  <span class="far fa-user"></span>
+				  <input
+					type="text"
+					name="fullname"
+					id="fullname"
+					placeholder="Fullname"
+					required
+					formControlName="fullname"
+				  /><br />
+				</div>
+				<small
+				  [hidden]="registerForm.controls['fullname'].valid || registerForm.controls['fullname'].untouched"
+				  class="text-danger"
+				  translate
+				>
+				Fullname is required, have atleast 3 letter  and maxm 8 letter
+				</small>
+				<div class="form-field d-flex align-items-center">
+				  <span class="fas fa-key"></span>
+				  <input
+					type="username"
+					name="username"
+					id="username"
+					placeholder="Username"
+					required
+					formControlName="username"
+				  /><br />	
+				</div>
+						
+				<small [hidden]="registerForm.controls['username'].valid || registerForm.controls['username'].untouched "  class="text-danger"translate >
+					Username is required, have atleast 3 letter  and maxm 8 letter
+				</small>
+				 
+			   <div class="form-field d-flex align-items-center">
+				  <span class="fas fa-key"></span>
+				  <input
+					type="password"
+					name="password"
+					id="password"
+					placeholder="Password"
+					required
+					formControlName="password"
+				  /><br />
+			
+				</div>
+				<small
+				  [hidden]="registerForm.controls['password'].valid || registerForm.controls['password'].untouched"
+				  class="text-danger"
+				  translate
+				>
+				  Password is required
+				</small>
+				<button class="btn mt-3" type="submit" [disabled]="registerForm.invalid || isLoading">
+				  <i class="fas fa-cog fa-spin" [hidden]="!isLoading"></i>Register
+				</button> 
+			  </form>
+			  <div class="text-center fs-6">or <a routerLink="/login">Login</a></div>
+			</div>
+			</div>
+			
+	 
+		
+	
+	
+	
+	  </div>
+	  <div class=" col-md-4 width"> 
+	  </div>
+	
+	</div>

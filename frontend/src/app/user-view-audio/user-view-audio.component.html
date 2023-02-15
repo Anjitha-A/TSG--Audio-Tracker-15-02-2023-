@@ -1,0 +1,52 @@
+<div class="container user-body">
+  <div class="row">
+    <div class="col-md-12 user-head">
+      <a routerLink="/userhome" (click)="logout()"
+        ><i class="fa-solid fa-house fa-xl home-icon2 text-light"></i>Logout</a
+      >
+      <a routerLink="/userhome"><i class="fa-solid fa-house fa-xl home-icon1 text-light"></i>Home</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12 userhome_heading">
+      <h1 class="audio_heading">
+        <i class="fa-solid fa-music homeicon fa-xl"></i>
+        Audio Tracker
+      </h1>
+      <div class="col-md-2"><p></p></div>
+      <div class="col-md-8">
+        <div class="cards-area border-light">
+          <div class="row card-width">
+            <div class="card border-secondary col-3 m-2 fill" style="width: 20rem; height: 30rem">
+              <img
+                class="card-img-top"
+                alt="..."
+                src="https://images.pexels.com/photos/164879/pexels-photo-164879.jpeg?auto=compress&cs=tinysrgb&w=600"
+              />
+              <div class="card-body">
+                <p class="card-title text-light">
+                  <b>Track : {{ audio.title }} </b>
+                </p>
+                <p class="card-text text-light">
+                  <b>Artist : {{ audio.artist }} </b>
+                </p>
+                <p class="card-text text-light">
+                  <b>Album : {{ audio.album }} </b>
+                </p>
+                <p class="card-text text-light">
+                  <b>Category : {{ audio.category }} </b>
+                </p>
+                <p class="card-text cursive text-light" [hidden]="!ratingTrue">
+                  <b>Rating : {{ audio.rating }}/5 </b>
+                </p>
+              </div>
+            </div>
+            &nbsp;
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2"><p></p></div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,55 @@
+<div class ="main_bg background">  
+<div class="row col-md-12">
+  <div class=" col-md-4 text-light width">   
+  </div>
+  <div class=" col-md-4 width ">
+    <div class="wrapper ">
+      <div class="logo">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRy8kEmJ3L8YfCS7b90biGobhe2AOVsrsRw5w&usqp=CAU"
+          alt=""
+        />
+      </div>
+      <div class="text-center mt-4 name">AUDIO TRACKER</div>
+      <form class="p-3 mt-3" (ngSubmit)="login()" [formGroup]="loginForm" novalidate>
+        <small id="errorMessage" [hidden]="!errTrue || isLoading" style="color: red; text-align: center"
+          >Wrong password or username</small
+        >
+        <!-- div for username -->
+        <div class="form-field d-flex align-items-center">
+          <input type="text" name="userName" id="userName"  placeholder="Username"required formControlName="username"/><br />
+        </div>
+    
+        <small [hidden]="loginForm.controls['username'].valid || loginForm.controls['username'].untouched" class="text-danger"translate>
+          Username atleast have 3 letter  and maxm 8 letter
+        </small>
+        <!-- div for password -->
+        <div class="form-field d-flex align-items-center">
+      
+          <input type="password"name="password"id="password"placeholder="Password"required formControlName="password"/><br />
+        </div>
+        <small
+          [hidden]="loginForm.controls['password'].valid || loginForm.controls['password'].untouched"
+          class="text-danger"
+          translate
+        >       
+          Password must have Minimum 8 characters, at least one uppercase letter, one lowercase letter, one number and one special character:
+        </small>
+        <!-- button for login -->
+        <button class="btn mt-3" type="submit" [disabled]="loginForm.invalid || isLoading">
+          <i class="fas fa-cog fa-spin" [hidden]="!isLoading"></i>Login
+        </button>
+      </form>
+      <!-- link for sign up -->
+      <div class="text-center fs-6"><a href="#"></a> or <a routerLink="/register">Sign up</a></div>
+    </div>
+ 
+    
+
+
+
+  </div>
+  <div class=" col-md-4 width"> 
+  </div>
+</div>
+</div>

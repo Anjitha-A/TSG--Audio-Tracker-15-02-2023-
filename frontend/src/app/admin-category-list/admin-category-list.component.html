@@ -1,0 +1,27 @@
+<div class="col py-3 container-fluid full_bg">
+  <div class="admin_audiolist_content">
+    <h1 class="text-dark heading cursive">Category List</h1>
+    <br /><br />
+    <!-- <a routerLink=""><button type="button" class="btn btn-dark add_button">Add Category</button></a> -->
+    <table class="table table-striped table-position">
+      <thead>
+        <tr>
+          <th scope="col">Category ID</th>
+          <th scope="col">Category Name</th>
+
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let i of category">
+          <td>{{ i.id }}</td>
+          <td>{{ i.category }}</td>
+
+          <td>
+    
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
